@@ -12,5 +12,7 @@ export default createGlobalStyle`
     max-width: 768px;
     margin: auto;
     text-align: center;
+    background-color: ${({theme}) => theme.background};
+    color: ${({theme}) => theme.textColor};
   }
 `;
