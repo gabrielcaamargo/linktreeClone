@@ -19,13 +19,17 @@ export default function App() {
 
 	return (
     <BrowserRouter>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+      <ThemeProvider
+        theme={
+          theme === 'dark'
+            ? darkTheme : lightTheme
+          }
+        >
         <GlobalStyles />
           <ThemeSwitcher>
             <button onClick={handleSwitchTheme}>
               {theme === 'dark' ? '🌞' : '🌚'}
             </button>
-          <h1>{userName}</h1>
           </ThemeSwitcher>
           <UserInfoProvider>
             <Router />
