@@ -10,8 +10,15 @@ export default function Home() {
   return (
       <Container>
         <h1>let's get <span>started</span>.</h1>
-        <Input type="text" placeholder="your name here" onChange={event => setUserName(event.target.value)}/>
-        <Button disabled={userName.length < 2}>get started</Button>
+        <Input
+          type="text"
+          placeholder="your name here"
+          onChange={event => setUserName(event.target.value)}
+        />
+        <Button
+          disabled={userName.length < 2}>
+            get started
+        </Button>
         <h1>{userName}</h1>
       </Container>
   )
