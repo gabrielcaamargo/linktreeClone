@@ -19,7 +19,6 @@ export default function Home() {
 				disabled={userName.length < 2}>
             get started
 			</Button>
-			<h1>{userName}</h1>
 		</Container>
 	);
 }
