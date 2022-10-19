@@ -1,7 +1,7 @@
-import defaultTheme from './default'
+import defaultTheme from "./default";
 
 export default {
-  ...defaultTheme,
-  background: '#141414',
-  textColor: '#EEEEEE'
-}
+	...defaultTheme,
+	background: "#141414",
+	textColor: "#EEEEEE"
+};
