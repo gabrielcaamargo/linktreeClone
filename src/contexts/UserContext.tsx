@@ -1,11 +1,12 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export interface UserInfoData {
   userName: string,
-  setUserName: any
+  setUserName: FunctionStringCallback
 }
 
-export const UserInfoDefaultValues = {}
+
+export const UserInfoDefaultValues = {};
 
 export const UserContext = createContext<UserInfoData>(UserInfoDefaultValues);
 
@@ -14,11 +15,11 @@ export interface UserInfoProps {
 }
 
 export function UserInfoProvider({children}: UserInfoProps) {
-  const [userName, setUserName] = useState('')
-  useEffect(() => console.log(userName), [userName])
-  return (
-    <UserContext.Provider value={{userName, setUserName}}>
-      {children}
-    </UserContext.Provider>
-  )
+	const [userName, setUserName] = useState("");
+
+	return (
+		<UserContext.Provider value={{userName, setUserName}}>
+			{children}
+		</UserContext.Provider>
+	);
 }

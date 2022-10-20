@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.form`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +20,11 @@ export const Container = styled.form`
   }
 
   button {
-    margin-top: 16px
+    margin-top: 16px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 `;
