@@ -24,6 +24,10 @@ export default function GetStarted() {
 		toast.success(`Welcome ${userName}. We are redirecting you`);
 	};
 
+	const handleOnEnterUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		event.code === "Enter" && handleToggleToast();
+	};
+
 	return (
 		<Container>
 			<h1>let's get <span>started</span>.</h1>
@@ -31,6 +35,7 @@ export default function GetStarted() {
 				type="text"
 				placeholder="your name here"
 				onChange={event => setUserName(event.target.value)}
+				onKeyUp={handleOnEnterUp}
 			/>
 			<ToastContainer />
 			<Button
