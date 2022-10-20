@@ -2,11 +2,13 @@ import { createContext, useState } from "react";
 
 export interface UserInfoData {
   userName: string,
-  setUserName: FunctionStringCallback
+  setUserName: (setState: string) => void
 }
 
-
-export const UserInfoDefaultValues = {};
+export const UserInfoDefaultValues = {
+	userName: "",
+	setUserName: () => {}
+};
 
 export const UserContext = createContext<UserInfoData>(UserInfoDefaultValues);
 
