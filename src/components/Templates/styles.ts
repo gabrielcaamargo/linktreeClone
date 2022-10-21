@@ -11,6 +11,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 24px;
+  box-shadow: 0px 4px 8px rgba(31,31,31,0.4);
 `;
 
 export const TemplateLine = styled.div`
