@@ -12,5 +12,5 @@ export const TemplateContainer = styled.div`
   margin-top: 72px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
+  gap: 32px;
 `;
