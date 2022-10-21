@@ -19,4 +19,12 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  span {
+    color: ${({theme}) => theme.colors.main} ;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
 `;

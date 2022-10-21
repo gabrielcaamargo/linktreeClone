@@ -7,14 +7,6 @@ export const Container = styled.div`
   align-items: center;
   height: 768px;
 
-  h1 {
-    font-size: 36px;
-  }
-
-  span {
-    color: ${({theme}) => theme.colors.main} ;
-  }
-
   input {
     margin-top: 32px;
   }
@@ -27,4 +19,9 @@ export const Container = styled.div`
       color: inherit;
     }
   }
+`;
+
+export const Subtitle = styled.h2`
+  font-size: 26px;
+  font-weight: 500;
 `;
