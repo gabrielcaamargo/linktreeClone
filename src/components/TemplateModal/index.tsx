@@ -4,8 +4,10 @@ import { Modal, Overlay } from "./styles";
 import { useContext } from "react";
 import { TemplateContext } from "../../contexts/TemplateContext";
 
+import { Link } from "react-router-dom";
+
 export default function TemplateModal() {
-	const { templateBackground, isModalOpen, setIsModalOpen } = useContext(TemplateContext);
+	const { templateBackground, setIsModalOpen } = useContext(TemplateContext);
 
 	return (
 		<Overlay>
@@ -21,15 +23,16 @@ export default function TemplateModal() {
 					<button
 						type="button"
 						onClick={
-							() => isModalOpen
-								? setIsModalOpen(false)
-								: setIsModalOpen(true)
+							() => setIsModalOpen(false)
 						}
 						title="Confirm"
 					>
               Cancel
 					</button>
-					<button type="button" title="Confirm">Confirm</button>
+
+					<button type="button" title="Confirm">
+						<Link to="/customize">Confirm</Link>
+					</button>
 				</div>
 			</Modal>
 		</Overlay>

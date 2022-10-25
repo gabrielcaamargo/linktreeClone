@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext  } from "react";
 import Templates from "../../components/Templates";
 import { UserContext } from "../../contexts/UserContext";
 import { Subtitle } from "../GetStarted/styles";
@@ -21,7 +21,7 @@ const templatesList = [
 export default function Template() {
 
 	const { userName } = useContext(UserContext);
-	const { templateBackground, setTemplateBackground, isModalOpen, setIsModalOpen } = useContext(TemplateContext);
+	const { setTemplateBackground, isModalOpen, setIsModalOpen } = useContext(TemplateContext);
 
 	const handleSelectTemplate = (event: any) => {
 		setTemplateBackground(event.background);

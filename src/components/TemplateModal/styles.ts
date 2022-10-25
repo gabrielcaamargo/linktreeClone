@@ -55,6 +55,11 @@ export const Modal = styled.div`
       padding: 8px 24px;
       transition: all 0.1s ease-in-out;
 
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
       &:first-child {
         background-color: #F51000;
       }
