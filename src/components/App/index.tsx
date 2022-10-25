@@ -9,13 +9,12 @@ import { ThemeSwitcher } from "./styles";
 
 import darkTheme from "../../assets/styles/themes/dark";
 import lightTheme from "../../assets/styles/themes/light";
-import { UserContext, UserInfoProvider } from "../../contexts/UserContext";
+import { UserInfoProvider } from "../../contexts/UserContext";
+import TemplateContextProvider from "../../contexts/TemplateContext";
 
 export default function App() {
 	const [theme, setTheme] = useState("dark");
 	const handleSwitchTheme = () => setTheme(theme === "dark" ? "light" : "dark");
-
-	const {userName, setUserName} = useContext(UserContext);
 
 	return (
 		<BrowserRouter>
@@ -32,7 +31,9 @@ export default function App() {
 					</button>
 				</ThemeSwitcher>
 				<UserInfoProvider>
-					<Router />
+					<TemplateContextProvider>
+						<Router />
+					</TemplateContextProvider>
 				</UserInfoProvider>
 			</ThemeProvider>
 		</BrowserRouter>

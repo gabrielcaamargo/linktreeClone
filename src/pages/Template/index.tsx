@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Templates from "../../components/Templates";
 import { UserContext } from "../../contexts/UserContext";
 import { Subtitle } from "../GetStarted/styles";
@@ -6,6 +6,7 @@ import { Container, TemplateContainer } from "./styles";
 
 import {FlowersImg, PinkImg, StarsImg, TreesImg, SnowImg, EggsImg } from "../../assets/images/templates/index";
 import TemplateModal from "../../components/TemplateModal";
+import { TemplateContext } from "../../contexts/TemplateContext";
 
 const templatesList = [
 	{id: 1, name: "Flowers", background: FlowersImg},
@@ -18,17 +19,14 @@ const templatesList = [
 ];
 
 export default function Template() {
+
 	const { userName } = useContext(UserContext);
-	const [ selectTemplate, setSelectTemplate ] = useState();
-	const [ selectTemplateBackground, setSelectTemplateBackground] = useState();
+	const { templateBackground, setTemplateBackground, isModalOpen, setIsModalOpen } = useContext(TemplateContext);
 
 	const handleSelectTemplate = (event: any) => {
-		setSelectTemplate(event.background);
-		return (
-			<Templates
-				background={event.background}
-			/>
-		);
+		setTemplateBackground(event.background);
+
+		setIsModalOpen(true);
 	};
 
 	return (
@@ -45,7 +43,7 @@ export default function Template() {
 					/>
 				))}
 			</TemplateContainer>
-			<TemplateModal />
+			{isModalOpen && <TemplateModal />}
 		</Container>
 	);
 }
