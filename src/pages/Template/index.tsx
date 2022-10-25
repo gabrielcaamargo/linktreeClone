@@ -40,6 +40,7 @@ export default function Template() {
 						key={template.id}
 						background={template.background}
 						onSelectTemplate={() => handleSelectTemplate(template)}
+						isSkeleton={true}
 					/>
 				))}
 			</TemplateContainer>

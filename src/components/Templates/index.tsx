@@ -1,11 +1,13 @@
 import { Container, TemplateLine } from "./styles";
 
 interface TemplatesProps {
+  children?: React.ReactNode,
   background: string,
   onSelectTemplate?: (event: any) => void;
+  isSkeleton: boolean
 }
 
-export default function Templates({background, onSelectTemplate}: TemplatesProps) {
+export default function Templates({children, background, onSelectTemplate, isSkeleton}: TemplatesProps) {
 	return (
 		<Container
 			style={{
@@ -13,10 +15,16 @@ export default function Templates({background, onSelectTemplate}: TemplatesProps
 			}}
 			onClick={onSelectTemplate}
 		>
-			<TemplateLine />
-			<TemplateLine />
-			<TemplateLine />
-			<TemplateLine />
+			{isSkeleton &&
+				<>
+					<TemplateLine />
+					<TemplateLine />
+					<TemplateLine />
+					<TemplateLine />
+				</>
+			}
+
+			{!isSkeleton && children}
 		</Container>
 	);
 }

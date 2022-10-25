@@ -15,6 +15,8 @@ export const Button = styled.button`
 
   text-align: center;
 
+  filter: drop-shadow(0px 4px 4px rgba(31,31,31,0.4));
+
   &:hover {
     background-color: ${({theme}) => theme.colors.dark};
   }
