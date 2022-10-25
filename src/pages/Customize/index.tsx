@@ -1,5 +1,5 @@
 import Templates from "../../components/Templates";
-import { Container, StyleTemplate, TemplateWrapper, UserArea, UserTemplateContainer } from "./styles";
+import { Container, StyleTemplate, TemplateWrapper, UserArea, UserLinksContainer, UserTemplateContainer } from "./styles";
 
 import { useContext } from "react";
 import { TemplateContext } from "../../contexts/TemplateContext";
@@ -22,6 +22,13 @@ export default function Customize() {
 							<img src="http://lorempixel.com.br/60/60/" />
 						</UserArea>
 
+
+						<UserLinksContainer>
+							<button>Instagram</button>
+							<button>Facebook</button>
+							<button>Linkedin</button>
+							<button>Add a link</button>
+						</UserLinksContainer>
 					</UserTemplateContainer>
 				</Templates>
 				<StyleTemplate>
@@ -31,6 +38,7 @@ export default function Customize() {
 					<Button type="button">Add Facebook</Button>
 					<Button type="button">Add LinkedIn</Button>
 					<Button type="button">Add Link</Button>
+
 				</StyleTemplate>
 			</TemplateWrapper>
 		</Container>

@@ -11,7 +11,8 @@ export default function Templates({children, background, onSelectTemplate, isSke
 	return (
 		<Container
 			style={{
-				backgroundImage: `url(${background})`
+				backgroundImage: `url(${background})`,
+				backgroundColor: `${background}`
 			}}
 			onClick={onSelectTemplate}
 		>
