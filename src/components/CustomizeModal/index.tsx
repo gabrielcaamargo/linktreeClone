@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.min.css";
 import { useContext, useState, useEffect } from "react";
 import { TemplateContext } from "../../contexts/TemplateContext";
 
@@ -13,14 +14,19 @@ export default function CustomizeModal() {
 		linkName,
 		setLinkName,
 		linkAddress,
-		setLinkAddress
+		setLinkAddress,
+		linkList,
+		setLinkList
 	} = useContext(TemplateContext);
 
 	const [isModalValid, setIsModalValid] = useState(false);
 
-
 	useEffect(() => {
-		isURLValid(linkAddress) ? setIsModalValid(true) : setIsModalValid(false);
+		if(linkName && isURLValid(linkAddress)) {
+			setIsModalValid(true);
+		} else {
+			setIsModalValid(false);
+		}
 	}, [linkAddress]);
 
 	function handleCancelCreateLink() {
@@ -28,20 +34,23 @@ export default function CustomizeModal() {
 	}
 
 	function handleCreateLink() {
-
-
-		console.log(linkName);
+		setLinkList((prevState: string[]) => [
+			...prevState,
+			{ name: linkName, link: linkAddress }
+		]);
+		setIsButtonModalOpen(false);
+		console.log(linkList);
 	}
 
 	return (
 		<Overlay>
 			<Modal>
 				<h1>Create your link</h1>
-
 				<Input
 					placeholder="Link name *"
 					onChange={(event) => setLinkName(event.target.value)}
 				/>
+
 				<Input
 					placeholder="Link address *"
 					onChange={(event) => setLinkAddress(event.target.value)}

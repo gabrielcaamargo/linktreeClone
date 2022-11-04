@@ -10,9 +10,20 @@ const TemplateDefaultValues = {
 	isButtonModalOpen: false,
 	setIsButtonModalOpen: () => {},
 
+	linkName: "",
+	setLinkName: () => {},
+
 	linkAddress: "",
-	setLinkAddress: () => {}
+	setLinkAddress: () => {},
+
+	linkList: [],
+	setLinkList: () => {}
 };
+
+interface LinkInterface {
+  name: string;
+  link: string;
+}
 
 interface TemplateInterface {
   templateBackground: string;
@@ -25,10 +36,13 @@ interface TemplateInterface {
 	setIsButtonModalOpen: (setState: boolean) => void;
 
   linkName: string;
-  setLinkName: (setState: any) => void;
+  setLinkName: (setState: string) => void;
 
   linkAddress: string;
-  setLinkAddress: (setState: any) => void;
+  setLinkAddress: (setState: string) => void;
+
+  linkList: LinkInterface[],
+  setLinkList: (setState: any) => void;
 }
 
 interface TemplateContextProps {
@@ -43,6 +57,7 @@ export default function TemplateContextProvider ({children}: TemplateContextProp
 	const [isButtonModalOpen, setIsButtonModalOpen] = useState(false);
 	const [linkName, setLinkName] = useState("");
 	const [linkAddress, setLinkAddress] = useState("");
+	const [linkList, setLinkList] = useState([]);
 
 	return (
 		<TemplateContext.Provider
@@ -55,8 +70,10 @@ export default function TemplateContextProvider ({children}: TemplateContextProp
 				isButtonModalOpen,
 				linkName,
 				setLinkName,
+				setLinkAddress,
 				linkAddress,
-				setLinkAddress
+				linkList,
+				setLinkList,
 			}}>
 			{children}
 		</TemplateContext.Provider>

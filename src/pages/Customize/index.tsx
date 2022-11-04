@@ -7,14 +7,7 @@ import { Button } from "../../components/common/Button";
 import CustomizeModal from "../../components/CustomizeModal";
 
 export default function Customize() {
-	const { templateBackground, isButtonModalOpen, setIsButtonModalOpen } = useContext(TemplateContext);
-
-	const templateButtons = [
-		{ name: "Instagram", link: "https://instagram.com/gabcamargo"},
-		{ name: "LinkedIn", link: "https://linkedin.com/in/gabcamargo"},
-	];
-
-	const [linkInfo, setLinkInfo] = useState([]);
+	const { templateBackground, isButtonModalOpen, setIsButtonModalOpen, linkList } = useContext(TemplateContext);
 
 	function handleCreateLink() {
 		setIsButtonModalOpen(true);
@@ -35,7 +28,7 @@ export default function Customize() {
 						</UserArea>
 
 						<UserLinksContainer>
-							{templateButtons.map(link => (
+							{linkList.map(link => (
 								<StyledLink
 									href={link.link}
 									target="_blank"
