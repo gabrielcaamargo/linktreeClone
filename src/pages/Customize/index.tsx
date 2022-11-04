@@ -1,12 +1,24 @@
 import Templates from "../../components/Templates";
-import { Container, StyleTemplate, TemplateWrapper, UserArea, UserLinksContainer, UserTemplateContainer } from "./styles";
+import { Container, StyledLink, StyleTemplate, TemplateWrapper, UserArea, UserLinksContainer, UserTemplateContainer } from "./styles";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TemplateContext } from "../../contexts/TemplateContext";
 import { Button } from "../../components/common/Button";
+import CustomizeModal from "../../components/CustomizeModal";
 
 export default function Customize() {
 	const { templateBackground } = useContext(TemplateContext);
+
+	const templateButtons = [
+		{ name: "Instagram", link: "https://instagram.com/gabcamargo"},
+		{ name: "LinkedIn", link: "https://linkedin.com/in/gabcamargo"},
+	];
+
+	const [linkInfo, setLinkInfo] = useState([]);
+
+	function addLink() {
+
+	}
 
 	return (
 		<Container>
@@ -22,12 +34,18 @@ export default function Customize() {
 							<img src="http://lorempixel.com.br/60/60/" />
 						</UserArea>
 
-
 						<UserLinksContainer>
-							<button>Instagram</button>
-							<button>Facebook</button>
-							<button>Linkedin</button>
-							<button>Add a link</button>
+							{templateButtons.map(link => (
+								<StyledLink
+									href={link.link}
+									target="_blank"
+									rel="noreferrer"
+									key={Math.random()}
+								>
+									{link.name}
+								</StyledLink>
+							))}
+							<button onClick={addLink}>Add a link</button>
 						</UserLinksContainer>
 					</UserTemplateContainer>
 				</Templates>
@@ -41,6 +59,7 @@ export default function Customize() {
 
 				</StyleTemplate>
 			</TemplateWrapper>
+			<CustomizeModal />
 		</Container>
 	);
 }

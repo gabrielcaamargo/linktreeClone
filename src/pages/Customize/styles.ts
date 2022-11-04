@@ -71,7 +71,11 @@ export const StyleTemplate = styled.div`
 `;
 
 export const UserLinksContainer = styled.div`
-    button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
     height: 40px;
     width: 80%;
     cursor: pointer;
@@ -83,7 +87,6 @@ export const UserLinksContainer = styled.div`
     color: #1C1C1C;
     font-size: 16px;
     transition: all .2s ease-in-out;
-
 
     &:hover {
       filter: brightness(0.8);
@@ -97,6 +100,39 @@ export const UserLinksContainer = styled.div`
       border: 3px dashed #CCC;
       background-color: #EEE;
     }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+`;
+
+export const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  margin: auto;
+  height: 40px;
+  width: 80%;
+  cursor: pointer;
+  margin-bottom: 8px;
+
+  background-color: #aaa;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #1C1C1C;
+  font-size: 16px;
+  transition: all .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+
+  &:active {
+    filter: brightness(1.2);
   }
 `;
 
