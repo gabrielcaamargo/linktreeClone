@@ -20,8 +20,8 @@ export const Container = styled.div`
 `;
 
 export const TemplateWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   width: 100%;
 `;
 

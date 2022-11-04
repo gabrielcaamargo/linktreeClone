@@ -15,7 +15,6 @@ export default function CustomizeModal() {
 		setLinkName,
 		linkAddress,
 		setLinkAddress,
-		linkList,
 		setLinkList
 	} = useContext(TemplateContext);
 
@@ -39,7 +38,6 @@ export default function CustomizeModal() {
 			{ name: linkName, link: linkAddress }
 		]);
 		setIsButtonModalOpen(false);
-		console.log(linkList);
 	}
 
 	return (
@@ -58,7 +56,11 @@ export default function CustomizeModal() {
 
 				<div>
 					<Button onClick={handleCancelCreateLink}>Cancel</Button>
-					<Button onClick={handleCreateLink} disabled={!isModalValid}>Create link</Button>
+					<Button
+						onClick={handleCreateLink}
+						disabled={!isModalValid}>
+              Create link
+					</Button>
 				</div>
 			</Modal>
 		</Overlay>

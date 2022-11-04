@@ -1,13 +1,17 @@
 import Templates from "../../components/Templates";
-import { Container, StyledLink, StyleTemplate, TemplateWrapper, UserArea, UserLinksContainer, UserTemplateContainer } from "./styles";
+import { Container, StyledLink, TemplateWrapper, UserArea, UserLinksContainer, UserTemplateContainer } from "./styles";
 
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { TemplateContext } from "../../contexts/TemplateContext";
-import { Button } from "../../components/common/Button";
 import CustomizeModal from "../../components/CustomizeModal";
 
 export default function Customize() {
-	const { templateBackground, isButtonModalOpen, setIsButtonModalOpen, linkList } = useContext(TemplateContext);
+	const {
+		templateBackground,
+		isButtonModalOpen,
+		setIsButtonModalOpen,
+		linkList
+	} = useContext(TemplateContext);
 
 	function handleCreateLink() {
 		setIsButtonModalOpen(true);
@@ -42,15 +46,6 @@ export default function Customize() {
 						</UserLinksContainer>
 					</UserTemplateContainer>
 				</Templates>
-				<StyleTemplate>
-					<h2>Customizing area</h2>
-
-					<Button type="button">Add Instagram</Button>
-					<Button type="button">Add Facebook</Button>
-					<Button type="button">Add LinkedIn</Button>
-					<Button type="button">Add Link</Button>
-
-				</StyleTemplate>
 			</TemplateWrapper>
 			{ isButtonModalOpen && <CustomizeModal />}
 		</Container>
