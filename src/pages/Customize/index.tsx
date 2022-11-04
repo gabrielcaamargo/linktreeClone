@@ -7,7 +7,7 @@ import { Button } from "../../components/common/Button";
 import CustomizeModal from "../../components/CustomizeModal";
 
 export default function Customize() {
-	const { templateBackground } = useContext(TemplateContext);
+	const { templateBackground, isButtonModalOpen, setIsButtonModalOpen } = useContext(TemplateContext);
 
 	const templateButtons = [
 		{ name: "Instagram", link: "https://instagram.com/gabcamargo"},
@@ -16,8 +16,8 @@ export default function Customize() {
 
 	const [linkInfo, setLinkInfo] = useState([]);
 
-	function addLink() {
-
+	function handleCreateLink() {
+		setIsButtonModalOpen(true);
 	}
 
 	return (
@@ -45,7 +45,7 @@ export default function Customize() {
 									{link.name}
 								</StyledLink>
 							))}
-							<button onClick={addLink}>Add a link</button>
+							<button onClick={handleCreateLink}>Add a link</button>
 						</UserLinksContainer>
 					</UserTemplateContainer>
 				</Templates>
@@ -59,7 +59,7 @@ export default function Customize() {
 
 				</StyleTemplate>
 			</TemplateWrapper>
-			<CustomizeModal />
+			{ isButtonModalOpen && <CustomizeModal />}
 		</Container>
 	);
 }

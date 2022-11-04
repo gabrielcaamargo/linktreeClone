@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 768px;
+  margin: auto;
 
   input {
     margin-top: 32px;
