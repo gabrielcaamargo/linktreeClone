@@ -5,16 +5,34 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0 auto 48px;
   gap: 24px;
 
   button {
-    width: 380px;
     height: 600px;
+    width: 380px;
     cursor: default;
 
     &:hover {
       transform: scale(1);
+    }
+
+    @media screen and (max-height: 768px) {
+      height: 450px;
+      width: 280px;
+    }
+  }
+
+  .finish {
+    width: 380px;
+    height: 40px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media screen and (max-height: 768px) {
+      width: 280px;
     }
   }
 `;
@@ -80,7 +98,7 @@ export const UserLinksContainer = styled.div`
     cursor: pointer;
     margin-bottom: 8px;
 
-    background-color: #aaa;
+    background-color: #EEE;
     border-radius: 8px;
     font-weight: bold;
     color: #1C1C1C;
@@ -116,7 +134,7 @@ export const StyledLink = styled.a`
   cursor: pointer;
   margin-bottom: 8px;
 
-  background-color: #aaa;
+  background-color: #CCC;
   border-radius: 8px;
   font-weight: bold;
   color: #1C1C1C;

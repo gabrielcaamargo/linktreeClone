@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 768px;
+
 `;
 
 export const TemplateContainer = styled.div`
@@ -13,4 +13,17 @@ export const TemplateContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
+
+  @media screen and (max-height: 768px) {
+    margin-top: 36px;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen (max-width: 600px) {
+    grid-template-columns: 1fr
+  }
 `;

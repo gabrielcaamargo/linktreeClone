@@ -14,7 +14,6 @@ const templatesList = [
 	{id: 4, name: "Green", background: "#39D073"},
 	{id: 5, name: "Pink", background: "#FF99C8"},
 	{id: 6, name: "Black", background: "#000"},
-
 ];
 
 export default function Template() {

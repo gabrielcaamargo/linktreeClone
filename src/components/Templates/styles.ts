@@ -17,6 +17,15 @@ export const Container = styled.button`
   &:hover {
     transform: scale(1.2);
   }
+
+  @media screen and (max-height: 768px) {
+    width: 160px;
+    height: 210px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `;
 
 export const TemplateLine = styled.div`

@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Customize from "./pages/Customize";
 import GetStarted from "./pages/GetStarted";
 import Template from "./pages/Template";
+import Customize from "./pages/Customize";
+import Finish from "./pages/Finish";
 
 export default function Router() {
 	return (
@@ -9,6 +10,7 @@ export default function Router() {
 			<Route path="/" element={<GetStarted />} />
 			<Route path="/template" element={<Template />} />
 			<Route path="/customize" element={<Customize />} />
+			<Route path="/finish" element={<Finish />} />
 		</Routes>
 	);
 }
